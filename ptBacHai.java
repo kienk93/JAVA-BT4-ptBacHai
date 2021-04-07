@@ -41,11 +41,11 @@ public class ptBacHai {
     }
 
     private double getRoot1() {
-        return ((-b + Math.sqrt(getDiscriminant())) / 2 * a);
+        return ((-b + Math.sqrt(getDiscriminant())) / (2 * a));
     }
 
     private double getRoot2() {
-        return ((-b - Math.sqrt(getDiscriminant())) / 2 * a);
+        return ((-b - Math.sqrt(getDiscriminant())) / (2 * a));
     }
 
     public static void main(String[] args) {
@@ -64,13 +64,18 @@ public class ptBacHai {
         System.out.print(ptBacHai1.getDiscriminant());
         int denta = ptBacHai1.getDiscriminant();
         System.out.println("");
-        if (denta > 0) {
-            System.out.println("Phương trình có 2 nghiệm : " + "x1 = " + ptBacHai1.getRoot1() + " " + "x2 = " + ptBacHai1.getRoot2());
-        } else if (denta == 0) {
-            System.out.println("Phương trình có 2 nghiệm = nhau : " + "x1 = x2 = " + ptBacHai1.getRoot1());
-        } else {
-            System.out.println("Phương trình vô nghiệm");
+        if (!(a == 0)) {
+            if (denta > 0) {
+                System.out.println("Phương trình có 2 nghiệm : " + "x1 = " + ptBacHai1.getRoot1() + ", " + "x2 = " + ptBacHai1.getRoot2());
+            } else if (denta == 0) {
+                System.out.println("Phương trình có 2 nghiệm = nhau : " + "x1 = x2 = " + ptBacHai1.getRoot1());
+            } else {
+                System.out.println("Phương trình vô nghiệm");
+            }
+        } else if (a==0 && b==0) {
+            System.out.println("Phương trình vô số nghiệm");
         }
+
     }
 
 
